@@ -16,6 +16,7 @@ public class CropPanel extends JPanel {
     private final Runnable refreshCallback;
     private JTable cropTable;
     private DefaultTableModel tableModel;
+    private JPanel summaryPanel;
 
     public CropPanel(FarmService farmService, Runnable refreshCallback) {
         this.farmService = farmService;
@@ -71,7 +72,7 @@ public class CropPanel extends JPanel {
         add(scrollPane, BorderLayout.CENTER);
 
         // Summary panel
-        JPanel summaryPanel = createSummaryPanel();
+        summaryPanel = createSummaryPanel();
         add(summaryPanel, BorderLayout.SOUTH);
 
         refresh();
@@ -246,15 +247,12 @@ public class CropPanel extends JPanel {
             });
         }
 
-        // Update summary
-        Component[] components = getComponents();
-        for (int i = 0; i < components.length; i++) {
-            if (components[i] instanceof JPanel && i == components.length - 1) {
-                remove(components[i]);
-                break;
-            }
+        // Update summary panel
+        if (summaryPanel != null) {
+            remove(summaryPanel);
         }
-        add(createSummaryPanel(), BorderLayout.SOUTH);
+        summaryPanel = createSummaryPanel();
+        add(summaryPanel, BorderLayout.SOUTH);
         revalidate();
         repaint();
     }

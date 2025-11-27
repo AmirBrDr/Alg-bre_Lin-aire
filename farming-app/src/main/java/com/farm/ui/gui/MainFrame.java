@@ -18,6 +18,7 @@ public class MainFrame extends JFrame {
     private InventoryPanel inventoryPanel;
     private HarvestPanel harvestPanel;
     private DashboardPanel dashboardPanel;
+    private JPanel statusBar;
 
     public MainFrame(FarmService farmService) {
         this.farmService = farmService;
@@ -108,7 +109,7 @@ public class MainFrame extends JFrame {
         add(tabbedPane, BorderLayout.CENTER);
 
         // Create status bar
-        JPanel statusBar = createStatusBar();
+        statusBar = createStatusBar();
         add(statusBar, BorderLayout.SOUTH);
     }
 
@@ -174,14 +175,11 @@ public class MainFrame extends JFrame {
         harvestPanel.refresh();
 
         // Update status bar
-        Container contentPane = getContentPane();
-        Component[] components = contentPane.getComponents();
-        for (Component c : components) {
-            if (c instanceof JPanel && c != tabbedPane) {
-                contentPane.remove(c);
-            }
+        if (statusBar != null) {
+            remove(statusBar);
         }
-        add(createStatusBar(), BorderLayout.SOUTH);
+        statusBar = createStatusBar();
+        add(statusBar, BorderLayout.SOUTH);
         revalidate();
         repaint();
     }

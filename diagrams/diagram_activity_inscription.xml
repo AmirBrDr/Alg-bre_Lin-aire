@@ -1,0 +1,155 @@
+<mxfile host="app.diagrams.net" modified="2026-01-13T10:41:25.822Z" agent="Mozilla/5.0" version="21.0.0">
+  <diagram name="Diagramme Activité - Inscription Joueur" id="activity-inscription">
+    <mxGraphModel dx="1422" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        
+        <!-- Title -->
+        <mxCell id="title" value="Diagramme d'Activité - Inscription d'un Joueur" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="400" y="20" width="300" height="30" as="geometry" />
+        </mxCell>
+        
+        <!-- Swimlanes -->
+        <mxCell id="swimlane_utilisateur" value="Utilisateur" style="swimlane;startSize=20;horizontal=0;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="80" y="60" width="400" height="700" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="swimlane_systeme" value="Système" style="swimlane;startSize=20;horizontal=0;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="480" y="60" width="400" height="700" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="swimlane_email" value="Serveur Email" style="swimlane;startSize=20;horizontal=0;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="880" y="60" width="200" height="700" as="geometry" />
+        </mxCell>
+        
+        <!-- Start Node -->
+        <mxCell id="start" value="" style="ellipse;fillColor=#000000;strokeColor=#000000;" vertex="1" parent="swimlane_utilisateur">
+          <mxGeometry x="180" y="20" width="30" height="30" as="geometry" />
+        </mxCell>
+        
+        <!-- Activities - User -->
+        <mxCell id="act1" value="Accéder à la page&#xa;d'inscription" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="swimlane_utilisateur">
+          <mxGeometry x="130" y="70" width="130" height="50" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="act3" value="Saisir adresse email" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="swimlane_utilisateur">
+          <mxGeometry x="130" y="180" width="130" height="50" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="act4" value="Valider le formulaire" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="swimlane_utilisateur">
+          <mxGeometry x="130" y="250" width="130" height="50" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="act8" value="Recevoir email&#xa;et cliquer sur lien" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="swimlane_utilisateur">
+          <mxGeometry x="130" y="500" width="130" height="50" as="geometry" />
+        </mxCell>
+        
+        <!-- Activities - System -->
+        <mxCell id="act2" value="Afficher formulaire&#xa;d'inscription" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="swimlane_systeme">
+          <mxGeometry x="130" y="120" width="130" height="50" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="act5" value="Vérifier si email&#xa;déjà utilisé" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="swimlane_systeme">
+          <mxGeometry x="130" y="300" width="130" height="50" as="geometry" />
+        </mxCell>
+        
+        <!-- Decision - Email exists -->
+        <mxCell id="decision1" value="Email&#xa;existe?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="swimlane_systeme">
+          <mxGeometry x="145" y="370" width="100" height="60" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="act6" value="Générer lien&#xa;de validation" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="swimlane_systeme">
+          <mxGeometry x="130" y="450" width="130" height="50" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="act9" value="Valider inscription&#xa;et activer compte" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="swimlane_systeme">
+          <mxGeometry x="130" y="560" width="130" height="50" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="act10" value="Afficher confirmation&#xa;d'inscription" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="swimlane_systeme">
+          <mxGeometry x="130" y="630" width="130" height="50" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="act_error" value="Afficher message&#xa;d'erreur" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="swimlane_systeme">
+          <mxGeometry x="280" y="370" width="100" height="50" as="geometry" />
+        </mxCell>
+        
+        <!-- Activities - Email Server -->
+        <mxCell id="act7" value="Envoyer email&#xa;de validation" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="swimlane_email">
+          <mxGeometry x="40" y="450" width="120" height="50" as="geometry" />
+        </mxCell>
+        
+        <!-- End Node -->
+        <mxCell id="end" value="" style="ellipse;fillColor=#000000;strokeColor=#000000;strokeWidth=3;" vertex="1" parent="swimlane_systeme">
+          <mxGeometry x="180" y="700" width="30" height="30" as="geometry" />
+        </mxCell>
+        
+        <!-- Flows -->
+        <mxCell id="flow1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=open;endFill=0;" edge="1" parent="1" source="start" target="act1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="flow2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=open;endFill=0;" edge="1" parent="1" source="act1" target="act2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="flow3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=open;endFill=0;" edge="1" parent="1" source="act2" target="act3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="flow4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=open;endFill=0;" edge="1" parent="1" source="act3" target="act4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="flow5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=open;endFill=0;" edge="1" parent="1" source="act4" target="act5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="flow6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=open;endFill=0;" edge="1" parent="1" source="act5" target="decision1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="flow7" value="Non" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=open;endFill=0;" edge="1" parent="1" source="decision1" target="act6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="flow8" value="Oui" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=open;endFill=0;" edge="1" parent="1" source="decision1" target="act_error">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="flow9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=open;endFill=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="act_error" target="act3">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="810" y="500" />
+              <mxPoint x="450" y="500" />
+              <mxPoint x="450" y="265" />
+              <mxPoint x="275" y="265" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        
+        <mxCell id="flow10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=open;endFill=0;" edge="1" parent="1" source="act6" target="act7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="flow11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=open;endFill=0;" edge="1" parent="1" source="act7" target="act8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="flow12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=open;endFill=0;" edge="1" parent="1" source="act8" target="act9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="flow13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=open;endFill=0;" edge="1" parent="1" source="act9" target="act10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="flow14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=open;endFill=0;" edge="1" parent="1" source="act10" target="end">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
